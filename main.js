@@ -10,6 +10,8 @@ let dollarBuy = _("dollarBuy");
 let dollarSell = _("dollarSell");
 let formBuy = _("formBuy");
 let formSell = _("formSell");
+let errorNaN1 = _("errorNaN1");
+let errorNaN2 = _("errorNaN2");
 
 let euroBuyValue = (euroBuy.innerText = 600);
 let euroSellValue = (euroSell.innerText = 605);
@@ -28,20 +30,41 @@ const calFormBuy = () => {
   if (selectedCurrency === "Euros") {
     let numGetInputField = parseInt(getInputField);
     let numEurosBuy = parseInt(euroBuyValue);
-    let result = numGetInputField * numEurosBuy;
-    return (calBuy.innerText = `${result} Naira`);
+
+    if (isNaN(parseFloat(numGetInputField))) {
+      errorNaN1.style.color = "red";
+      errorNaN1.innerText = `Please insert a number`;
+    } else {
+      let result = numGetInputField * numEurosBuy;
+      calBuy.innerText = `${result} Naira`;
+      errorNaN1.innerText = "";
+    }
   }
   if (selectedCurrency === "Pounds") {
     let numGetInputField = parseInt(getInputField);
     let numPoundsBuy = parseInt(poundsBuyValue);
-    let result = numGetInputField * numPoundsBuy;
-    return (calBuy.innerText = `${result} Naira`);
+
+    if (isNaN(parseFloat(numGetInputField))) {
+      errorNaN1.style.color = "red";
+      errorNaN1.innerText = `Please insert a number`;
+    } else {
+      let result = numGetInputField * numPoundsBuy;
+      calBuy.innerText = `${result} Naira`;
+      errorNaN1.innerText = "";
+    }
   }
   if (selectedCurrency === "Dollars") {
     let numGetInputField = parseInt(getInputField);
     let numDollarsBuy = parseInt(dollarBuyValue);
-    let result = numGetInputField * numDollarsBuy;
-    return (calBuy.innerText = `${result} Naira`);
+
+    if (isNaN(parseFloat(numGetInputField))) {
+      errorNaN1.style.color = "red";
+      errorNaN1.innerText = `Please insert a number`;
+    } else {
+      let result = numGetInputField * numDollarsBuy;
+      calBuy.innerText = `${result} Naira`;
+      errorNaN1.innerText = "";
+    }
   }
 };
 
@@ -55,23 +78,41 @@ const calFormSell = () => {
   if (selectedCurrency === "Euros") {
     let numGetInputField = parseInt(getInputField);
     let numEurosSell = parseInt(euroSellValue);
-    console.log(numGetInputField);
-    console.log(numEurosSell);
-    let result = numGetInputField * numEurosSell;
-    console.log(result);
-    return (calSel.innerText = `${result} Naira`);
+    if (isNaN(parseFloat(numGetInputField))) {
+      errorNaN2.style.color = "red";
+      errorNaN2.innerText = `Please insert a number`;
+    } else {
+      let result = numGetInputField * numEurosSell;
+      calSel.innerText = `${result} Naira`;
+      errorNaN2.innerText = "";
+    }
   }
+
   if (selectedCurrency === "Pounds") {
     let numGetInputField = parseInt(getInputField);
     let numPoundsSell = parseInt(poundsSellValue);
-    let result = numGetInputField * numPoundsSell;
-    return (calSel.innerText = `${result} Naira`);
+    if (isNaN(parseFloat(numGetInputField))) {
+      errorNaN2.style.color = "red";
+      errorNaN2.innerText = `Please insert a number`;
+    } else {
+      let result = numGetInputField * numPoundsSell;
+      calSel.innerText = `${result} Naira`;
+      errorNaN2.innerText = "";
+    }
   }
+
   if (selectedCurrency === "Dollars") {
     let numGetInputField = parseInt(getInputField);
     let numDollarsSell = parseInt(dollarSellValue);
-    let result = numGetInputField * numDollarsSell;
-    return (calSel.innerText = `${result} Naira`);
+
+    if (isNaN(parseFloat(numGetInputField))) {
+      errorNaN2.style.color = "red";
+      errorNaN2.innerText = `Please insert a number`;
+    } else {
+      let result = numGetInputField * numDollarsSell;
+      calSel.innerText = `${result} Naira`;
+      errorNaN2.innerText = "";
+    }
   }
 };
 
@@ -79,6 +120,10 @@ const calFormSell = () => {
 const resetForm = () => {
   formBuy.reset();
   formSell.reset();
+  calSel.innerText = "";
+  calBuy.innerText = "";
+  errorNaN1.innerText = "";
+  errorNaN2.innerText = "";
 };
 
 //functions to hide and show calculator
