@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="tableParent"> 
+    <table>
+      <tr>
+        <th>Exchange rate</th>
+        <th>Buy</th>
+        <th>Sell</th>
+      </tr>
+      <tr>
+        <td>Euros</td>
+        <td id="euroBuy"></td>
+        <td id="euroSell"></td>
+      </tr>
+      <tr>
+        <td>Pounds</td>
+        <td id="poundsBuy"></td>
+        <td id="poundsSell"></td>
+      </tr>
+      <tr>
+        <td>Dollars</td>
+        <td id="dollarBuy"></td>
+        <td id="dollarSell"></td>
+      </tr>
+    </table>
+  </div>
+
+<div class="buyAndSelParent">
+  <div class="buyAndSelParent2">
+    <div class="buySellButton">
+      <button onclick="showBuyCal()" class="buyBS1" id="buyBS1">BUY</button>
+      <button onclick="showSellCal()" class="buyBS2" id="buyBS2">SELL</button>
+    </div>
+   
+    <div id="formBuyToggle" class="hideCalculator">
+      <form id="formBuy"  action="">
+        <label for="cars">select a currency:</label>
+        <select name="currency" id="buyCurrency">
+          <option value="Euros">Euros</option>
+          <option value="Pounds">Pounds</option>
+          <option value="Dollars">Dollars</option>
+        </select>
+        <input type="number"  id="formBuyInput">
+       
+        <span id="calBuy"></span>
+      </form>
+      <div class="centerBtn">
+        <button onclick="calFormBuy()">Calculate</button>
+        <button onclick="resetForm()">Reset</button>
+      </div>
+    </div>
+   
+
+    <div id="formSellToggle" class="hideCalculator">
+      <form id="formSell" action="">
+        <label for="cars">select a currency:</label>
+        <select name="currency" id="sellCurrency">
+          <option value="Euros">Euros</option>
+          <option value="Pounds">Pounds</option>
+          <option value="Dollars">Dollars</option>
+        </select>
+        <input type="number" id="formSellput">
+        <span id="calSel"> </span>
+      </form>
+      <div class="centerBtn">
+        <button onclick="calFormSell()">Calculate</button>
+        <button onclick="resetForm()">Reset</button>
+      </div>
+    </div>
+   
+  </div>
+ 
+  
+</div>
+</body>
+<script src="main.js"></script>
+
+</html>

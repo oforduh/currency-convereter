@@ -1,0 +1,74 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.tableParent {
+  display: grid;
+  place-items: center;
+  height: 20vh;
+}
+.buyAndSelParent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  width: 70vw;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+}
+.buyAndSelParent2 {
+  min-width: 270px;
+}
+
+.buySellButton {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.buyBS1 {
+  width: 30%;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  border: none;
+}
+.buyBS2 {
+  width: 30%;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+.centerBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.centerBtn button {
+  margin-right: 10px;
+  padding: 7px;
+  width: 25%;
+  border-radius: 3px;
+  color: white;
+  background-color: #000;
+  border: none;
+}
+
+.hideCalculator {
+  display: none;
+}
